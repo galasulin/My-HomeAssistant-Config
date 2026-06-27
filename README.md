@@ -1,107 +1,86 @@
-<!-- <p align="center">
-  <img src="https://github.com/abeksis/My-HomeAssistant-Config/blob/master/HA_Pictures/Github_Pictures/Banner.png" width="1000"/>
-</p> -->
+# 🏠 My Home Assistant Configuration
 
-I live in <img src="https://github.com/oxguy3/flags/blob/master/mini/il.png"/> and I love technology very much. I'm known in Israel from my other projects and I enjoy sharing what I do.
+My personal **Home Assistant** setup — packages, Lovelace dashboards and automations for a mobile-first smart home, running in **Docker** on an **Unraid** server.
 
+> This repository is a personalized fork of [**abeksis/My-HomeAssistant-Config**](https://github.com/abeksis/My-HomeAssistant-Config), which itself builds on the excellent [**HomeKit Infused (HKI)**](https://github.com/jimz011/homekit-infused) project by [Jimz011](https://github.com/jimz011). Full credit to the original authors — see [Credits](#-credits).
 
-I am in discord under the following [link](https://discord.gg/ayZ3Kkg), welcome to visit and ask questions.
+---
 
-<!-- The project presented - is my smart home project. Where I sat for hours and was helped by good friends like [Eliran Turgeman](https://github.com/VirtualL/HomeAssistant-Config) ,[Dima Goltsman](https://github.com/dimagoltsman/ha-custom-component-ituran), [Yuval Mejahez](https://github.com/rt400/Shabbat-Times?fbclid=IwAR1ctaMcllg22ZSeg97n_G6L-f0kiBI0y0rqpIIOS82eIVlNHg6dvjn-QgU) And JamesMcCarthy79 sorry if I forgot someone.  -->
+## 📋 Overview / סקירה
 
+🇬🇧 A clean, opinionated Home Assistant configuration focused on a polished mobile dashboard and reliable automations. Everything is containerized for easy backup and recovery.
 
-<p align="center">Be sure to <g-emoji class="g-emoji" alias="star" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png">⭐️</g-emoji> my repo!</p>
+🇮🇱 קונפיגורציה של Home Assistant לבית חכם, עם דגש על דשבורד נייד נקי ואוטומציות יציבות. הכול רץ ב‑Docker על שרת Unraid לגיבוי ושחזור קלים.
 
-## Home Assistant Configuration
-- Unraid Server
-- Docker Container
-- [Home Kit Infused](https://github.com/jimz011/homekit-infused)
+---
 
- ## Credits
- - [Jimz011](https://github.com/jimz011) Thanks for your assistance and ideas on this :)
- - [Noodlemctwoodle](https://github.com/noodlemctwoodle) Did a perfect job of bringing unraid server to the home assistant interface, and helped me in discord when I needed.
- 
-## HKI Documentation can be found here
-[Documentation](https://jimz011.github.io/homekit-infused/)
+## 🧱 Stack
 
+| Layer        | Technology                                                          |
+| ------------ | ------------------------------------------------------------------- |
+| Platform     | Home Assistant                                                      |
+| Host         | Unraid server                                                       |
+| Runtime      | Docker container                                                    |
+| UI framework | [HomeKit Infused (HKI)](https://github.com/jimz011/homekit-infused) |
 
-## Video
+---
 
-<table>
-<thead>
-<tr>
-<th><a href="https://github.com/abeksis/My-HomeAssistant-Config/tree/master/HA_Pictures/Lovelace_Screenshots">Youtube - Short video</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://www.youtube.com/watch?v=CoiW0YjCO8g"><img src="https://raw.githubusercontent.com/abeksis/My-HomeAssistant-Config/master/HA_Pictures/Github_Pictures/Smart_home_mobile_interface.png" style="max-width:100%;"></a></td>
-</tr>
-</tbody>
-</table>
+## 📁 Repository structure
 
+```
+.
+├── HomeAssistant_File/        # The Home Assistant config root
+│   ├── configuration.yaml     # Main entry point
+│   ├── configuration/         # Split YAML (automations, alarm, sensors, …)
+│   ├── packages/              # Modular feature packages
+│   ├── custom_components/     # Custom / HACS integrations
+│   ├── homekit-infused/       # HKI dashboard base
+│   ├── themes/                # Lovelace themes
+│   ├── image/  &  www/        # Local assets served by HA
+├── HA_Pictures/               # Screenshots & images
+│   ├── HA_Screenshots/        # App screenshots
+│   ├── Lovelace_Screenshots/  # Dashboard screenshots
+│   ├── Images_for_packages/   # Images used inside packages
+│   └── Github_Pictures/       # Images used in this README
+└── README.md
+```
 
+---
 
-<!-- <p>
-  <img src="https://img.shields.io/github/stars/abeksis/My-HomeAssistant-Config.svg?style=plasticr"/>
-  <img src="https://img.shields.io/badge/HA--Version-0.87.1-brightgreen.svg"/>
-  <img src="https://img.shields.io/maintenance/yes/2019.svg"/>
-  <img src="https://img.shields.io/github/commit-activity/y/abeksis/My-HomeAssistant-Config.svg"/>
-  <img src="https://img.shields.io/github/last-commit/abeksis/My-HomeAssistant-Config.svg?style=plasticr"/>
-  <img src="https://img.shields.io/github/issues/abeksis/My-HomeAssistant-Config.svg"/>
-  <img src="https://img.shields.io/badge/license-Unlicense-blue.svg"/>
-  <img src="http://hits.dwyl.io/abeksis/My-HomeAssistant-Config.svg)%5D(http://hits.dwyl.io/abeksis/My-HomeAssistant-Config)"/>
-</p> -->
- <!--  <hr> קו הפרדה -->
+## 🖼️ Screenshots
 
-<!-- <img src="https://github.com/abeksis/My-HomeAssistant-Config/blob/master/HA_Pictures/Github_Pictures/Xiaomi_Logo.png" width="150"/>
+| Home dashboard | Energy / electricity |
+| -------------- | -------------------- |
+| ![Home](HA_Pictures/Lovelace_Screenshots/home.jpg) | ![Electricity](HA_Pictures/Lovelace_Screenshots/electricity_use.jpg) |
 
-| Gateways | Door/Window Sensors | Motion Sensors | Smoke Sensors | Smart Switch   |
-|:--------:|:-------------------:|:--------------:|:-------------:|:--------------:|
-|1         |2                    |5               |1              |2               |
+| Quick access | Unraid server |
+| ------------ | ------------- |
+| ![Quick access](HA_Pictures/Lovelace_Screenshots/Quick_access.jpg) | ![Unraid](HA_Pictures/Lovelace_Screenshots/unraid.jpg) |
 
-| Yi Light Bulb | Temp/Hum Sensors | Appliances    | Lamps      |
-|:-------------:|:----------------:|:-------------:|:----------:|
-|1              |1                 |2              |1           |
+---
 
-<img src="https://github.com/abeksis/My-HomeAssistant-Config/blob/master/HA_Pictures/Github_Pictures/sonoff.png" width="180"/>
+## 🚀 Getting started
 
-| Basic | POW2 | TH10 | Wall Switch (Touch)   |
-|:-----:|:----:|:------:|:-------------------:|
-|8      |2     |1       |4                    | -->
+> ⚠️ This is my personal configuration. Treat it as a reference, not a drop-in install — paths, entity IDs and secrets are specific to my hardware.
 
-<hr --- </hr> 
+1. Install [Home Assistant](https://www.home-assistant.io/installation/) (this setup runs it in Docker).
+2. Review `HomeAssistant_File/configuration/` and adapt entity IDs to your own devices.
+3. Copy the `packages/` you want into your config and enable packages in `configuration.yaml`.
+4. Never commit secrets — keep tokens and passwords in `secrets.yaml` (git-ignored).
 
-<table>
-<thead>
-<tr>
-<th><a href="https://github.com/abeksis/My-HomeAssistant-Config/blob/master/HomeAssistant_File/ui-lovelace.yaml">Lovelace UI</a></th>
-<th><a href="https://github.com/abeksis/My-HomeAssistant-Config/tree/master/HomeAssistant_File/packages">Packages</a></th>
-<th><a href="https://github.com/abeksis/My-HomeAssistant-Config/tree/master/HomeAssistant_File/configuration">configuration</a></th>
-<!-- <th><a href="https://github.com/abeksis/My-HomeAssistant-Config/blob/master/HomeAssistant_File/config/scripts.yaml">Scripts</a></th> -->
-<!-- <th><a href="https://github.com/abeksis/My-HomeAssistant-Config/blob/master/HomeAssistant_File/config/groups.yaml">Groups</a></th> -->
-<!-- <th><a href="https://github.com/abeksis/My-HomeAssistant-Config/blob/master/HomeAssistant_File/config/automation/automations.yaml">Automations</a></th> -->
-</tr>
-</thead></table>
+---
 
-<!-- <table>
-<thead>
-<tr>
-<th><a href="https://github.com/abeksis/My-HomeAssistant-Config/tree/master/HA_Pictures/Lovelace_Screenshots">Lovelace Screenshots</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/abeksis/My-HomeAssistant-Config/tree/master/HA_Pictures/Lovelace_Screenshots"><img src="https://github.com/abeksis/My-HomeAssistant-Config/blob/master/HA_Pictures/Lovelace_Screenshots/new/lovelace-11.jpg" style="max-width:100%;"></a></td>
-</tr></tbody></table> -->
+## 🙏 Credits
 
-<table>
-<thead>
-<tr>
-<th><a href="https://github.com/abeksis/My-HomeAssistant-Config/tree/master/HA_Pictures/Lovelace_Screenshots">Pictures - Mobile Display</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/abeksis/My-HomeAssistant-Config/tree/master/HA_Pictures/Lovelace_Screenshots"><img src="https://raw.githubusercontent.com/abeksis/My-HomeAssistant-Config/master/HA_Pictures/Github_Pictures/Mobile-display.jpg" style="max-width:100%;"></a></td>
-</tr></tbody></table>
+- [**Jimz011**](https://github.com/jimz011) — creator of HomeKit Infused, the foundation of this dashboard.
+- [**abeksis**](https://github.com/abeksis) — the configuration this fork is based on.
+- [**Noodlemctwoodle**](https://github.com/noodlemctwoodle) — Unraid ↔ Home Assistant integration help.
+
+## 📚 Reference
+
+- [HomeKit Infused documentation](https://jimz011.github.io/homekit-infused/)
+- [Home Assistant documentation](https://www.home-assistant.io/docs/)
+
+---
+
+<sub>⭐ Star this repo if it helped you set up your own smart home.</sub>
